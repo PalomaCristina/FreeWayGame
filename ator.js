@@ -1,4 +1,5 @@
 //ator
+var xAtor = 100;
 var yAtor = 366;
 
 function movimentaAtor(){
