@@ -1,8 +1,8 @@
 
 //refatorando codigo
-var xCarros = [400, 400, 400];
-var yCarros = [40, 95, 150];
-var velocidadeCarros = [4.5, 3.8, 5];
+var xCarros = [400, 400, 400, 400, 400, 400];
+var yCarros = [40, 95, 150, 210, 265, 320];
+var velocidadeCarros = [4.5, 3.8, 5, 4, 3.5, 4.5];
 var colisao = false;
 var alturaCarro = 40;
 var comprimentoCarro = 45;
@@ -18,7 +18,7 @@ function movimentaCarro() {
   }
   
 function voltaPosicaoInicial(){
-    for(let i = 0; i < 3; i++){
+    for(let i = 0; i < imagemCarros.length; i++){
         if(xCarros[i] < -50){
             xCarros[i] = 600;
             
