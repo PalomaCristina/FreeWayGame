@@ -13,13 +13,14 @@ function mostraCarros() {
         image(imagemCarros[i], xCarros[i], yCarros[i], comprimentoCarro, alturaCarro);
     }
 }
+//movimentacao e velocidade dos carros
 function movimentaCarro() {
     for (let i = 0; i < xCarros.length; i++) {
         xCarros[i] -= velocidadeCarros[i];
     }
 }
-
-function voltaPosicaoInicial() {
+//esse é o loop para os carros continuarem sempre se movimentando
+function voltaCarrosPosicaoInicial() {
     for (let i = 0; i < imagemCarros.length; i++) {
         if (xCarros[i] < -50) {
             xCarros[i] = 600;
@@ -28,19 +29,20 @@ function voltaPosicaoInicial() {
     }
 }
 
-function verificaColisao() {
-    for (let i = 0; i < imagemCarros.length; i++) {
-        colisao = collideRectCircle(xCarros[i], yCarros[i], comprimentoCarro, alturaCarro, xAtor, yAtor, 15);
-        //print('colisao: '+colisao);
-        if (colisao) {
+function verificaColisao(){
+    //collideRectCircle(x1, y1, width1, height1, cx, cy, diameter)
+    for (let i = 0; i < imagemCarros.length; i++){
+      colisao = collideRectCircle(xCarros[i], yCarros[i], comprimentoCarro, alturaCarro, xAtor, yAtor, 15)
+        if (colisao){
             voltaAtorPosicaoInicial();
-            //somDaColisao.play();
-            if (pontosMaiorQueZero()) {
-                meusPontos -= 1;
+            if (pontosMaiorQueZero()){
+                    meusPontos -= 1;
             }
         }
     }
 }
+
+
     function incluiPontos() {
         textAlign(CENTER);
         textSize(25);
@@ -58,5 +60,5 @@ function verificaColisao() {
     }
 
    function pontosMaiorQueZero(){
-        return meusPontos > 0;
+        return meusPontos>0;
    }

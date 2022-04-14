@@ -3,14 +3,14 @@ function setup() {
 }
 
 function draw() {
+  
   background(imagemDaEstrada);
   image(imagemDoAtor, xAtor, yAtor, 30, 30);
   mostraCarros();
   movimentaCarro();
   movimentaAtor();
-  voltaPosicaoInicial();
+  voltaCarrosPosicaoInicial();
   verificaColisao();
   incluiPontos();
   marcaPonto();
 }
-
